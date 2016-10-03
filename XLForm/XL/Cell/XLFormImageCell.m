@@ -110,6 +110,9 @@
     imagePickerController = [[UIImagePickerController alloc] init];
     imagePickerController.delegate = self;
     imagePickerController.sourceType = source;
+    if (source == UIImagePickerControllerSourceTypeCamera) {
+        imagePickerController.allowsEditing = true;
+    }
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         popoverController = [[UIPopoverController alloc] initWithContentViewController:imagePickerController];
